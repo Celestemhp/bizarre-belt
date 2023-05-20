@@ -1,0 +1,48 @@
+---
+const { link, variant } = Astro.props;
+---
+
+<a href={link} data-variant={variant} class="btn">
+  <slot />
+</a>
+
+<style>
+.btn {
+  transition: var(--btnAnimationTransition);
+  background-color: var(--orange);
+}
+.btn:hover {
+  background-color: var(--darkOrange);
+  animation: var(--btnAnimation);
+  animation-timing-function: var(--btnAnimation-timing-function);
+  animation-duration: var(--btnAnimation-duration);
+  scale: var(--ctaHover);
+}
+
+  [data-variant="primary"] {
+    background: var(--ctaPrimaryBgColor);
+    color: var(--ctaPrimaryTextColor);
+    text-decoration: none;
+    border-radius: var(--ctaPrimaryBorderRadius);
+    padding: 0.8rem 2rem;
+    display: inline-block;
+    font-weight: var(--fontNormal);
+  }
+
+  [data-variant="secondary"] {
+    background: var(--ctaSecondaryBgColor);
+    color: var(--ctaSecondaryTextColor);
+    text-decoration: none;
+    border: 0;
+    border-radius: var(--ctaSecondaryBorderRadius);
+    padding: 0.75rem 1.5rem;
+    display: inline-block;
+    font-weight: var(--fontNormal);
+  }
+
+  [data-variant="ghost"] {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+  }
+</style>

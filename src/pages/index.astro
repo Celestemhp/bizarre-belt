@@ -1,0 +1,370 @@
+---
+import Header from "../components/Header.astro";
+import Fragt from "../components/Fragt.astro";
+import Genre from "../components/Genre.astro";
+import "../styles/aliasTellerup.css";
+import "../styles/globalTellerup.css";
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Landingpage</title>
+	</head>
+	<body>
+		<header> 
+			<Header></Header>
+		</header>
+		<main>
+			<!-- Hero section -->
+			<section class="hero">
+				<article class="heroArticle1">
+					<h1>Velkommen til Tellerups univers, <br> fyldt med historier!</h1>
+					<button>Se vores udvalg</button>
+				</article>
+				<div class="heroArticle2">
+					<img src="public/books.webp" alt="books">
+				</div>
+			</section>
+			<!-- fragt section -->
+			<section class="fragt">
+				<ul>
+					<li>
+						<Fragt icon="public/book.webp" title="Stort udvalg af bøger" text="Vælg blandt vores mange spændene genrer"></Fragt>
+
+					</li>
+					<li>
+						<Fragt icon="public/book.webp" title="Stort udvalg af bøger" text="Vælg blandt vores mange spændene genrer"></Fragt>
+
+					</li>
+					<li>
+						<Fragt icon="public/book.webp" title="Stort udvalg af bøger" text="Vælg blandt vores mange spændene genrer"></Fragt>
+
+					</li>
+					<li>
+						<Fragt icon="public/book.webp" title="Stort udvalg af bøger" text="Vælg blandt vores mange spændene genrer"></Fragt>
+
+					</li>
+				
+				</ul>
+				</section>
+			<!-- single section -->
+			<section class="singleSection">
+				<div class="single">
+					<div class="containerImg">
+						<img src="public/single.webp" alt="book">
+					</div>
+					<article>
+						<div class="singleTextContainer">
+							<h1>Forudbestil “Større end os” 
+								af Christina Bonde</h1>
+							<h2>“Større end os” udkommer den 1. Juli 2023. 
+								Bogen kan forudbestilles hos Tellerup.</h2>
+							<h3>Resumé</h3>
+							<p>
+								Chaol og Nesryn er rejst til det sydlige kontinent med to mål for øje: At helbrede Chaolog bringe en styrke med tilbage.Det skal dog vise sig at blive sværere end forventet, for khaganen, det sydlige kontinents mægtige leder, er i sorg og ønsker ikke at træffe en beslutning her og nu.Da en healer bliver myrdet under mystiske omstændigheder, frygter Chaol og Nesrynat Valkerne er fulgt efter dem til syden. 
+							</p>
+						</div>
+						<div class="singleBottom">
+							<h2>320 DKK</h2>
+							<button>Forudbestil her</button>
+						</div>
+					</article>
+					<span>
+						<img src="public/big_badge.webp" alt="nyhed">
+					</span>
+				</div>
+
+			</section>
+			<!-- tilbud -->
+			<section class="dubleviewContainer">
+				<article class="dubleview1">
+					<div class="dubleview1Img"> 
+						<img src="public/landing_tilbud.webp" alt="tilbud">
+					</div>
+					<div class="dubleviewContainerText">
+						<h3>Bøger behøves ikke <br> at koste alverden</h3>
+						<button>Se vores tilbud</button>
+					</div>
+				</article>
+				<article class="dubleview1">
+					<div class="dubleview1Img"> 
+						<img src="public/landing_tilbud.webp" alt="tilbud">
+					</div>
+					<div class="dubleviewContainerText">
+						<h3>Bøger behøves ikke <br> at koste alverden</h3>
+						<button>Se vores tilbud</button>
+					</div>
+				</article>
+			</section>
+			<!-- genrer -->
+			<section class="genreSection">
+				<Genre></Genre>
+			</section>
+		</main>
+
+	</body>
+</html>
+
+<style>
+
+	.hero {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		background-color: var(--bluegrey);
+		padding: 70px;
+	}
+	.hero article {
+		padding: 5px;
+	}
+	.hero .heroArticle1 {
+		display: flex;
+		flex-direction: column;
+
+	}
+	.hero .heroArticle1 h1 {
+		margin-bottom: 30px;
+		padding: 5px;
+		color: var(--white);
+		font-weight: var(--fontBold);
+	}
+	.hero .heroArticle1 button {
+		width: 200px;
+		height: 50px;
+		background-color: var(--orange);
+		border-radius: var(--globalBorderRadiusL);
+		color: var(--white);
+	}
+	.hero .heroArticle2 {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+	}
+	.hero .heroArticle2 img {
+		max-width: 50%;
+	}
+	/* Section 2 */
+	.fragt ul{
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		margin: 50px;
+		list-style: none;
+		justify-content: center;
+		align-items: center;
+	}
+
+	@media only screen and (min-width: 550px){
+		.fragt ul{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			gap: 10px;
+			margin: 50px;
+			list-style: none;
+			justify-items: center;
+		}
+	}
+	@media only screen and (min-width: 900px){
+		.fragt ul{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-content: center;
+			gap: 25px;
+			margin: 100px;
+		}
+	}
+
+	/* Section 3 */
+	.singleSection {
+		background-color: var(--vanilla);
+		margin: 3%;
+	}
+	.singleSection .single {
+		position: relative;
+		min-width: 0px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.singleSection .single .containerImg {
+		display: flex;
+		border-radius: 5px;
+		margin-top: 10%;
+		max-width: 100%;
+		max-height: 100%;
+		position: relative;
+		align-content: center;
+		justify-content: center;
+	}
+	.singleSection .single .containerImg img {
+		position: relative;
+		border-radius: 5px;
+		max-width: 60%;
+		max-height: 165%;
+		justify-self: center;
+	}
+
+	.singleSection .single article {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin: 10%;
+	}
+	.singleSection .single article .singleTextContainer {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		text-align: left;
+		gap: 10px;
+	}
+
+	.singleSection .single article .singleTextContainer h1 {
+		font-weight: var(--fontSemibold);
+	}
+	.singleSection .single article .singleTextContainer h2 {
+		justify-content: flex-start;
+		margin-bottom: 16px;
+		font-weight: var(--fontSemibold);
+		font-size: 16px;
+	}
+	.singleSection .single article .singleTextContainer h3 {
+		font-weight: var(--fontBold);
+	}
+	.singleSection .single article .singleTextContainer p {
+		margin-bottom: 0px;
+		max-width: 520px;
+	}
+	.singleSection .single article .singleBottom {
+		margin-top: 32px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 90px;
+		place-self: end;
+	}
+	.singleSection .single article .singleBottom h2 {
+		color: var(--orange);
+		font-weight: var(--fontBold);
+	}
+	.singleSection .single span {
+		position: absolute;
+		right: -40px;
+		top: -40px;
+		max-width: 240px;
+	}
+	@media only screen and (min-width: 900px){
+	.singleSection {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 28px;
+		max-height: 492px;
+		position: relative;
+		}
+	.singleSection .single {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 28px;
+		max-height: 492px;
+		
+	}
+	.singleSection .single .containerImg {
+		width: 40%;
+		height: 100%;
+		padding: 80px 0px;
+		display: flex;
+		justify-content: center;
+		margin: 0%;
+	}
+	.singleSection .single .containerImg img {
+		position: relative;
+		display: flex;
+		border-radius: 5px;
+		max-width: 60%;
+		max-height: 165%;
+	}
+	.singleSection .single article {
+		width: 50%;
+		flex: 1 1 0%;
+		align-items: flex-start;
+		-moz-box-pack: center;
+		justify-content: center;
+		text-align: left;
+		padding: 64px 100px 48px 48px;
+		margin: 0%;
+	}
+	.singleSection .singleSection article .singleTextContainer h1 {
+		font-size: clamp(32px, 1rem + 2vw, 32px);
+		line-height: 1.1;
+		margin-bottom: 16px;
+	}
+}
+/* Section 5 */
+.dubleviewContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	margin: 90px 3% 90px 3%;
+	justify-content: center;
+}
+.dubleviewContainer .dubleview1 {
+	background-color: var(--lightblue);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 70px;
+	flex-direction: column;
+}
+.dubleviewContainer .dubleview1 .dubleview1Img {
+	max-width: 300px;
+}
+.dubleviewContainer .dubleview1 .dubleviewContainerText{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	gap: 30px;
+}
+.dubleviewContainer .dubleview1 .dubleviewContainerText h3{
+	font-weight: var(--fontBold);
+	text-align: center;
+
+}
+.dubleviewContainer .dubleview1 button {
+		width: 200px;
+		height: 50px;
+		background-color: var(--orange);
+		border-radius: var(--globalBorderRadiusL);
+		color: var(--white);
+		cursor: pointer;
+}	
+@media only screen and (min-width: 900px){
+	.dubleviewContainer {
+		display: flex;
+		flex-direction: row;
+		gap: 30px;
+		margin: 90px 3% 90px 3%;
+		padding-left: 7px;
+		padding-right: 7px;
+		position: relative;
+	}
+	.dubleviewContainer .dubleview1 {
+		max-height: 475px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		flex-direction: row;
+	}
+	.dubleviewContainer .dubleview1 .dubleviewContainerText h3{
+		font-size: 18px;
+	}
+}
+
+</style>
