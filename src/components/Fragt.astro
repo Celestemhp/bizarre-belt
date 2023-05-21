@@ -24,28 +24,25 @@ const { icon, title, text} = Astro.props;
     height: fit-content;
     margin: 0;
     gap: 12px;
-}
-.container div {
-    display: flex;
-}
-.containerImg {
+}.containerImg {
     width: 100px;
-    place-self: center;
+    margin: 0 auto;
 }
 .text_container {
     display: flex;
     flex-direction: column;
     gap: 5px;
     max-width: 200px;
-    place-self: center;
+    margin: 0 auto;
 }
+
 .text_container h3 {
     font-weight: var(--fontBold);
-    place-self: center;
     text-align: center;
 }
+
 .text_container p {
-    place-self: center;
     text-align: center;
 }
+
 </style>
