@@ -44,38 +44,81 @@ import Button from "../components/Button.astro";
       </a>
 
       <!-- burgermenu -->
-      <div class="burger-menu">
-        <div class="menu">
-          <div class="logo">Logo</div>
-          <div class="menu-toggle">☰</div>
-          <div class="menu-items">
-            <div class="dropdown">
-              <div class="dropdown-title">Dropdown 1</div>
-              <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-              </div>
+      <input type="checkbox" id="hamburger-input" class="burger-shower" />
+      <label id="hamburger-menu" for="hamburger-input">
+          <div class="burger-icon">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-            <div class="dropdown">
-              <div class="dropdown-title">Dropdown 2</div>
-              <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+  
+          <nav id="sidebar-menu">
+              <div class="headerOpenBurger">
+                  <a href="index.html">
+                      <img src="public/tellerup_logo3_primaer.webp" alt="logobillede" class="logoBurger"/>
+                  </a>
+                  <span class="iconX"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" color="#080707"><path d="M39 10.44 37.56 9 24 22.56 10.44 9 9 10.44 22.56 24 9 37.56 10.44 39 24 25.44 37.56 39 39 37.56 25.44 24 39 10.44z"></path></svg></span>
               </div>
-            </div>
-            <div class="dropdown">
-              <div class="dropdown-title">Dropdown 3</div>
-              <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+             
+              <ul>    
+              <div class="margin-stroke"></div>
+  
+              <div class="dropdown">
+                  <div class="dropdown-title">Kategori
+                      <!-- pil -->
+                      <svg class="arrow" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                  </div>
+                  <div class="dropdown-content">
+                      <a href="#">Alle bøger</a>
+                      <a href="#">Bestsellers</a>
+                      <a href="#">Nyheder</a>
+                      <a href="#">Genre</a>
+                  </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              <div class="stroke"></div>
+  
+              <div class="dropdown">
+                  <div class="dropdown-title">Forfattere
+                      <!-- pil -->
+                      <svg class="arrow" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                  </div>
+                  <div class="dropdown-content">
+                      <a href="#">Christina Bonde</a>
+                      <a href="#">Line Wenzel</a>
+                      <a href="#">Louise Hailberg</a>
+                      <a href="#">Line Wenzel</a>
+                  </div>
+              </div>
+              <div class="stroke"></div>
+  
+              <div class="dropdown">
+                  <div class="dropdown-title">Aldersgrupper
+                      <!-- pil -->
+                      <svg class="arrow" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                  </div>
+                  <div class="dropdown-content">
+                      <a href="#">0 - 2 år</a>
+                      <a href="#">3 - 5 år</a>
+                      <a href="#">6 - 10 år</a>
+                      <a href="#">10 - 15 år</a>
+                      <a href="#">Over 15 år</a>
+                  </div>
+              </div>
+              <div class="stroke"></div>
+  
+  
+              <li><a href="#">Tilbud</a></li>
+              <div class="stroke"></div>
+  
+              <li><a href="#">Undervisningsmateriale</a></li>
+              <div class="stroke"></div>
+              <li class="containerFavoritter">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="black" d="m10.65 19.8l-1.725-1.575q-2.65-2.425-4.788-4.813T2 8.15Q2 5.8 3.575 4.225T7.5 2.65q1.325 0 2.5.562t2 1.538q.825-.975 2-1.538t2.5-.562q2.35 0 3.925 1.575T22 8.15q0 2.875-2.125 5.275T15.05 18.25l-1.7 1.55q-.575.55-1.35.55t-1.35-.55Zm.4-13.05q-.725-1.025-1.55-1.563t-2-.537q-1.5 0-2.5 1t-1 2.5q0 1.3.925 2.763t2.213 2.837q1.287 1.375 2.65 2.575T12 18.3q.85-.775 2.213-1.975t2.65-2.575q1.287-1.375 2.212-2.837T20 8.15q0-1.5-1-2.5t-2.5-1q-1.175 0-2 .537T12.95 6.75q-.175.25-.425.375T12 7.25q-.275 0-.525-.125t-.425-.375Zm.95 4.725Z"/></svg>         
+                  <a href="#">Favoritter</a></li>
+              </ul>
+          </nav>
+      </label>
+  <div class="overlay"></div>
     
       
 
@@ -95,6 +138,8 @@ import Button from "../components/Button.astro";
       <div x-data="{ open: false }" @click.away="open = false" @mouseover="open = true" @mouseleave="open = false" class="dropdown">
           <button @click="open = !open" class="kategori">
               <h2>Kategori</h2>
+                       <!-- pil -->
+                       <svg class="arrow" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                    </button>
           
           <div class="dropdownContainer">
@@ -130,32 +175,34 @@ import Button from "../components/Button.astro";
       <div x-data="{ open: false }" @click.away="open = false" @mouseover="open = true" @mouseleave="open = false" class="dropdown">
         <button @click="open = !open" class="forfattere">
             <h2>Forfattere</h2>
+                     <!-- pil -->
+                     <svg class="arrow" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                </button>
         <div class="dropdownContainer">
             <ul x-show="open" class="dropdown-content">
               <li>
-                <a href="#">Alle bøger</a>
+                <a href="#">Christina Bonde</a>
               </li>
               <li>
-                <a href="#">Bestsellers</a>
+                <a href="#">Line Wenzel</a>
               </li>
               <li>
-                <a href="#">Genre</a>
+                <a href="#">Louise Hailberg</a>
               </li>
               <li>
-                <a href="#">Notesbøger</a>
+                <a href="#">Line Wenzel</a>
               </li>
               <li>
-                <a href="#">Bogserier</a>
+                <a href="#">Willam E. Iversen</a>
               </li>
               <li>
-                <a href="#">Fysiske bøger</a>
+                <a href="#">Emilie Vader</a>
               </li>
               <li>
-                <a href="#">Lydbøger</a>
+                <a href="#">Julie Lykke</a>
               </li>
               <li>
-                <a href="#">E-bøger</a>
+                <a href="#">Martin Pedersen</a>
               </li>
             </ul>
         </div>
@@ -165,7 +212,7 @@ import Button from "../components/Button.astro";
         <button @click="open = !open" class="aldersgrupper">
             <h2>Aldersgrupper</h2>
               <!-- pil -->
-          <!-- <svg class="arrow" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg> -->
+          <svg class="arrow" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <div class="dropdownContainer">
             <ul x-show="open" class="dropdown-content">
@@ -218,7 +265,11 @@ import Button from "../components/Button.astro";
 *:focus{
   outline: none;
 }
-
+header {
+  /* position: fixed; */
+  width: 100%;
+  z-index: 20;
+}
 h2, h3, p {
     color: var(--white);
     text-decoration: none;
@@ -358,106 +409,209 @@ h2, h3, p {
   height: 28px;
 }
 
-/* burgermenu */
-.burger-menu {
-      display: none;
+/* burgermenu */    
+.headerOpenBurger {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: initial;
     }
+.logoBurger {
+    width: 80%;
+}
+.iconX {
+    width: 500px;
+    display: flex;
+    align-self: self-end;
+    cursor: pointer;
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    background: black;
+    z-index: -1;
+}
 
-    .menu {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #333;
-      color: #fff;
-      padding: 10px;
-      position: relative;
-    }
+#main-menu {
+  display: block;
+  height: 100px;
+  width: 100%;
+  background: var(--lightblue);
+  margin: 0px;  
+  z-index: 9;
+}
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
+#main-menu ul {
+  max-width: 800px;
+  width: 100%;
+  height: 100%;
+  margin: 0px auto;
+  padding: 0px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 9;
+}
 
-    .menu-toggle {
-      cursor: pointer;
-      font-size: 24px;
-      padding: 5px;
-    }
+#main-menu li {
+  list-style-type: none;
+  font-size: 2rem;
+}
 
-    .close-button {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 24px;
-      cursor: pointer;
-    }
+#main-menu a {
+  color: black;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
 
-    .menu-items {
-      display: none;
-      flex-direction: column;
-      background-color: #333;
-      color: #fff;
-      padding: 10px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-    }
+#main-menu a:hover {
+  text-decoration: underline;
+}
+.burger-icon {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
 
-    .dropdown {
-      margin-bottom: 10px;
-      border-bottom: 1px solid #fff;
-      padding-bottom: 10px;
-    }
+.burger-icon span {
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+}
 
-    .dropdown:last-child {
-      margin-bottom: 0;
-      border-bottom: none;
-      padding-bottom: 0;
-    }
+#hamburger-input{
+  display: none;
+  
+}
 
-    .dropdown-title {
-      font-weight: bold;
-      cursor: pointer;
-    }
+#hamburger-menu {
+    /* position: fixed; */
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    display: none;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
 
-    .dropdown-content {
-      display: none;
-    }
+#hamburger-menu #sidebar-menu {
+    visibilty: hidden;
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100%;
+    background: var(--lightblue);
+    transition: 0.3s;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
 
-    .dropdown:hover .dropdown-content {
-      display: flex;
-      flex-direction: column;
-    }
+#hamburger-menu h3 {
+color: black;
+  font-size: 2.2rem;
+}
 
-    .dropdown-content a {
-      color: #fff;
-      text-decoration: none;
-      padding: 5px 0;
-    }
+#hamburger-menu ul {
+  padding-left: 0px;
+  text-align: left;
+}
 
-    @media only screen and (max-width: 900px) {
-      .burger-menu {
-        display: block;
-      }
+#hamburger-menu li {
+  list-style-type: none;
+  line-height: 3rem;
+}
 
-      .menu {
-        flex-direction: column;
-      }
+#hamburger-menu a {
+  color: black;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
 
-      .menu-toggle {
-        display: block;
-      }
+#hamburger-menu a:hover {
+  text-decoration: underline;
+}
 
-      .menu-items {
-        display: none;
-      }
+#hamburger-input:checked + #hamburger-menu #sidebar-menu {
+    visibility: visible;
+    left: 0;
+}
+#hamburger-input:checked ~ .overlay{
+   visibility: visible;
+  opacity: 0.4;
+}
 
-      .menu.active .menu-items {
-        display: flex;
-      }
-    }
+@media screen and (max-width: 750px) {
+  #main-menu {
+    display: none;
+  }
+  #hamburger-menu {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+}
+
+
+.dropdown-title {
+    cursor: pointer;
+    color: black;
+    font-size: 1.3rem;
+    text-decoration: none;
+    line-height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-content {
+    display: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-content a {
+    color: black;
+    font-size: 2.2rem;
+    text-decoration: none;
+    line-height: 3rem;
+}
+.arrow {
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 2px;
+    border-radius: 1px;
+    width: 30px;
+}
+.stroke {
+    border: solid 0.3px;
+}
+.margin-stroke {
+    border: solid 0.3px;
+    margin-top: 20px;
+}
+.containerFavoritter {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
     /****************** Navigation ************************/
 .navHeader {
     width: auto;
@@ -556,6 +710,9 @@ h2, h3, p {
     border-radius: 1px;
     width: 30px;
 }
+.navLeft .arrow {
+  width: 20px;
+}
 .navHeader .navRight {
   display: flex;
   flex-wrap: wrap;
@@ -614,10 +771,11 @@ button :hover {
     padding-bottom: 1px;
     margin-bottom: 8px;
     cursor: pointer;
+    font-size: clamp(10px, 1.2vw, 16px);
+
 }
 .dropdown ::after, ::before {
   box-sizing: border-box;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 }
@@ -650,20 +808,29 @@ button :hover {
 
 <script>
   // burgermenu 
-  document.querySelector('.menu-toggle').addEventListener('click', function () {
-      document.querySelector('.menu').classList.toggle('active');
-    });
+    // Hent reference til krydsikonet
+    const closeIcon = document.querySelector('.iconX');
 
+// Hent reference til den sektion, der skal lukkes
+const sectionToClose = document.querySelector('#sidebar-menu');
+
+// Tilføj eventlistener til krydsikonet
+closeIcon.addEventListener('click', function() {
+  // Skjul sektionen ved at tilføje en CSS-klasse
+  sectionToClose.classList.add('hidden');
+});
 
 
 
 function search() {
-  var searchInput = document.getElementById('searchInput');
+  var searchInput = document.getElementById('searchInput') as HTMLInputElement;
   var searchResults = document.getElementById('searchResults');
   var searchText = searchInput.value.toLowerCase();
 
   // Nulstil tidligere resultater
-  searchResults.innerHTML = '';
+  if (searchResults) {
+    searchResults.innerHTML = '';
+  }
 
   // Udfør søgning
   var items = ['Apple', 'Banana', 'Orange', 'Pineapple', 'Strawberry'];
@@ -672,10 +839,13 @@ function search() {
   });
 
   // Vis søgeresultater
-  matchingItems.forEach(function(item) {
-    var li = document.createElement('li');
-    li.textContent = item;
-    searchResults.appendChild(li);
-  });
+  if (searchResults) {
+    matchingItems.forEach(function(item) {
+      var li = document.createElement('li');
+      li.textContent = item;
+      searchResults.appendChild(li);
+    });
+  }
 }
+
 </script>

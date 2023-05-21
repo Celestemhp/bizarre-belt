@@ -1,0 +1,314 @@
+---
+import Header from "../components/Header.astro";
+import "../styles/aliasTellerup.css";
+import "../styles/globalTellerup.css";
+
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>test</title>
+
+</head>
+
+<body>
+    <Header> </Header>
+    <input type="checkbox" id="hamburger-input" class="burger-shower" />
+    <label id="hamburger-menu" for="hamburger-input">
+        <div class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+        <nav id="sidebar-menu">
+            <div class="headerOpenBurger">
+                <a href="index.html">
+                    <img src="public/tellerup_logo3_primaer.webp" alt="logobillede" class="logo"/>
+                </a>
+                <span class="iconX"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" color="#080707"><path d="M39 10.44 37.56 9 24 22.56 10.44 9 9 10.44 22.56 24 9 37.56 10.44 39 24 25.44 37.56 39 39 37.56 25.44 24 39 10.44z"></path></svg></span>
+            </div>
+           
+            <ul>    
+            <div class="margin-stroke"></div>
+
+            <div class="dropdown">
+                <div class="dropdown-title">Kategori
+                    <!-- pil -->
+                    <svg class="arrow" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="dropdown-content">
+                    <a href="#">Alle bøger</a>
+                    <a href="#">Bestsellers</a>
+                    <a href="#">Nyheder</a>
+                    <a href="#">Genre</a>
+                </div>
+            </div>
+            <div class="stroke"></div>
+
+            <div class="dropdown">
+                <div class="dropdown-title">Forfattere
+                    <!-- pil -->
+                    <svg class="arrow" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="dropdown-content">
+                    <a href="#">Christina Bonde</a>
+                    <a href="#">Line Wenzel</a>
+                    <a href="#">Louise Hailberg</a>
+                    <a href="#">Line Wenzel</a>
+                </div>
+            </div>
+            <div class="stroke"></div>
+
+            <div class="dropdown">
+                <div class="dropdown-title">Aldersgrupper
+                    <!-- pil -->
+                    <svg class="arrow" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="dropdown-content">
+                    <a href="#">0 - 2 år</a>
+                    <a href="#">3 - 5 år</a>
+                    <a href="#">6 - 10 år</a>
+                    <a href="#">10 - 15 år</a>
+                    <a href="#">Over 15 år</a>
+                </div>
+            </div>
+            <div class="stroke"></div>
+
+
+            <li><a href="#">Tilbud</a></li>
+            <div class="stroke"></div>
+
+            <li><a href="#">Undervisningsmateriale</a></li>
+            <div class="stroke"></div>
+            <li class="containerFavoritter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="black" d="m10.65 19.8l-1.725-1.575q-2.65-2.425-4.788-4.813T2 8.15Q2 5.8 3.575 4.225T7.5 2.65q1.325 0 2.5.562t2 1.538q.825-.975 2-1.538t2.5-.562q2.35 0 3.925 1.575T22 8.15q0 2.875-2.125 5.275T15.05 18.25l-1.7 1.55q-.575.55-1.35.55t-1.35-.55Zm.4-13.05q-.725-1.025-1.55-1.563t-2-.537q-1.5 0-2.5 1t-1 2.5q0 1.3.925 2.763t2.213 2.837q1.287 1.375 2.65 2.575T12 18.3q.85-.775 2.213-1.975t2.65-2.575q1.287-1.375 2.212-2.837T20 8.15q0-1.5-1-2.5t-2.5-1q-1.175 0-2 .537T12.95 6.75q-.175.25-.425.375T12 7.25q-.275 0-.525-.125t-.425-.375Zm.95 4.725Z"/></svg>         
+                <a href="#">Favoritter</a></li>
+            </ul>
+        </nav>
+    </label>
+<div class="overlay"></div>
+    
+</body>
+</html>
+<style>
+    .headerOpenBurger {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        flex-wrap: initial;
+    }
+.logo {
+    width: 80%;
+}
+.iconX {
+    width: 500px;
+    display: flex;
+    align-self: self-end;
+    cursor: pointer;
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    background: black;
+    z-index: -1;
+}
+
+#main-menu {
+  display: block;
+  height: 100px;
+  width: 100%;
+  background: var(--lightblue);
+  margin: 0px;  
+  z-index: 9;
+}
+
+#main-menu ul {
+  max-width: 800px;
+  width: 100%;
+  height: 100%;
+  margin: 0px auto;
+  padding: 0px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 9;
+}
+
+#main-menu li {
+  list-style-type: none;
+  font-size: 2rem;
+}
+
+#main-menu a {
+  color: black;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+#main-menu a:hover {
+  text-decoration: underline;
+}
+.burger-icon {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.burger-icon span {
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+}
+
+#hamburger-input{
+  display: none;
+  
+}
+
+#hamburger-menu {
+    /* position: fixed; */
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    display: none;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+#hamburger-menu #sidebar-menu {
+    visibilty: hidden;
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100%;
+    background: var(--lightblue);
+    transition: 0.3s;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+#hamburger-menu h3 {
+color: black;
+  font-size: 2.2rem;
+}
+
+#hamburger-menu ul {
+  padding-left: 0px;
+}
+
+#hamburger-menu li {
+  list-style-type: none;
+  line-height: 3rem;
+}
+
+#hamburger-menu a {
+  color: black;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+#hamburger-menu a:hover {
+  text-decoration: underline;
+}
+
+#hamburger-input:checked + #hamburger-menu #sidebar-menu {
+    visibility: visible;
+    left: 0;
+}
+#hamburger-input:checked ~ .overlay{
+   visibility: visible;
+  opacity: 0.4;
+}
+
+@media screen and (max-width: 750px) {
+  #main-menu {
+    display: none;
+  }
+  #hamburger-menu {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+}
+
+
+.dropdown-title {
+    cursor: pointer;
+    color: black;
+    font-size: 1.3rem;
+    text-decoration: none;
+    line-height: 3rem;
+    display: flex;
+    align-content: center;
+}
+
+.dropdown-content {
+    display: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-content a {
+    color: black;
+    font-size: 2.2rem;
+    text-decoration: none;
+    line-height: 3rem;
+}
+.arrow {
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 2px;
+    border-radius: 1px;
+    width: 30px;
+}
+.stroke {
+    border: solid 0.3px;
+}
+.margin-stroke {
+    border: solid 0.3px;
+    margin-top: 20px;
+}
+.containerFavoritter {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+</style>
+<script>
+    // Hent reference til krydsikonet
+const closeIcon = document.querySelector('.iconX');
+
+// Hent reference til den sektion, der skal lukkes
+const sectionToClose = document.querySelector('#sidebar-menu');
+
+// Tilføj eventlistener til krydsikonet
+closeIcon.addEventListener('click', function() {
+  // Skjul sektionen ved at tilføje en CSS-klasse
+  sectionToClose.classList.add('hidden');
+});
+</script>
