@@ -3,10 +3,11 @@ import Header from "../components/Header.astro";
 import MainHeader from "../components/MainHeader.astro";
 import Button from "../components/Button.astro";
 import KurvItem from "../components/KurvItem.astro";
+import Slider from "../components/Slider.astro";
 
 
-import "../styles/aliasTellerup.css";
-import "../styles/globalTellerup.css";
+import "../styles/global.css";
+import "../styles/tokens.css";
 ---
 
 <html lang="en">
@@ -67,6 +68,9 @@ import "../styles/globalTellerup.css";
                 </div>
             </section>
             <p class="side">2 - 2 (af 2 produkter)</p>
+            <section>
+                <Slider />
+            </section>
         </main>
     </body>
 </html>
