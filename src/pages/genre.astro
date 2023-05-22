@@ -1,5 +1,8 @@
 ---
 import Header from "../components/Header.astro";
+import MainHeader from "../components/MainHeader.astro";
+import Button from "../components/Button.astro";
+
 import "../styles/aliasTellerup.css";
 import "../styles/globalTellerup.css";
 
@@ -18,11 +21,8 @@ import "../styles/globalTellerup.css";
 			<Header></Header>
 		</header>
 		<main>
-            <div class="mainHeader">
-                <h1>Genrer</h1>
-            </div>
+      <MainHeader title="Genrer"></MainHeader>
             <section class="genre-section">
-                <!-- <h2>Genre</h2> -->
                 <div class="genre-grid">
                   <div class="genre-box" style="background-color: var(--darkvanilla);"><a href="kategori.astro"><h2>BØRNEBØGER</h2></a></div>
                   <div class="genre-box" style="background-color: var(--vanilla);"><a href="kategori.astro"><h2>KRIMI</h2></a></div>
@@ -47,23 +47,19 @@ import "../styles/globalTellerup.css";
     * {
       box-sizing: border-box;
     }
-    .mainHeader {
-        background-color: var(--royalblue);
-        height: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-    }
-    .mainHeader h1 {
-        color: white;
-        font-weight: var(--fontBold);
-    }
     .genre-section {
       text-align: center;
-      padding: 70px;
     }
-
+    @media (min-width: 300px) {
+      .genre-section {
+        padding: 30px;
+    }
+    }
+    @media (min-width: 400px) {
+      .genre-section {
+        padding: 70px;
+    }
+    }
     .genre-section h2 {
       font-weight: bold;
     }

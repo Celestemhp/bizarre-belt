@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Fragt from "../components/Fragt.astro";
 import Genre from "../components/Genre.astro";
+import Button from "../components/Button.astro";
 import "../styles/aliasTellerup.css";
 import "../styles/globalTellerup.css";
 
@@ -23,8 +24,10 @@ import "../styles/globalTellerup.css";
 			<!-- Hero section -->
 			<section class="hero">
 				<article class="heroArticle1">
+					<div>
 					<h1>Velkommen til Tellerups univers, <br> fyldt med historier!</h1>
-					<button>Se vores udvalg</button>
+						<Button link="www.google.dk" variant="primary" size="base" style="white">Se vores udvalg</Button>
+					</div>
 				</article>
 				<div class="heroArticle2">
 					<img src="public/books.webp" alt="books">
@@ -34,8 +37,8 @@ import "../styles/globalTellerup.css";
 			<section class="fragtContainer">
 				<div class="fragt">
 				<Fragt icon="public/book.webp" title="Stort udvalg af bøger" text="Vælg blandt vores mange spændene genrer"></Fragt>
-				<Fragt icon="public/book.webp" title="Hurtig fragt" text="1-3 dages levering"></Fragt>
-				<Fragt icon="public/book.webp" title="Fri fragt" text="Ved køb over 300 DKK leverer vi gratis til din hoveddør"></Fragt>
+				<Fragt icon="public/delivery-truck.webp" title="Hurtig fragt" text="1-3 dages levering"></Fragt>
+				<Fragt icon="public/fast-delivery.webp" title="Fri fragt" text="Ved køb over 300 DKK leverer vi gratis til din hoveddør"></Fragt>
 				<Fragt icon="public/book.webp" title="Retur nemt" text="Forkert valg? Returner nemt og gratis"></Fragt>
 				</div>
 			</section>
@@ -56,7 +59,8 @@ import "../styles/globalTellerup.css";
 					</div>
 					<div class="singleBottom">
 					  <h2>320 DKK</h2>
-					  <button>Forudbestil her</button>
+					  <Button link="www.google.dk" variant="primary" size="base" style="white">Forudbestil her</Button>
+
 					</div>
 				  </article>
 				  <span>
@@ -72,7 +76,7 @@ import "../styles/globalTellerup.css";
 				</div>
 				  <div class="boxContent">
 					<h3>Bøger behøves ikke <br> at koste alverden</h3>
-					<button>Se vores tilbud</button>
+					<Button link="www.google.dk" variant="primary" size="base" style="white">Se vores tilbud</Button>
 				  </div>
 				</div>
 				<div class="box" style="background-color: var(--darkvanilla);">
@@ -81,7 +85,7 @@ import "../styles/globalTellerup.css";
 				</div>
 				  <div class="boxContent">
 					<h3>Bøger behøves ikke <br> at koste alverden</h3>
-					<button>Se vores tilbud</button>
+					<Button link="www.google.dk" variant="primary" size="base" style="white">Se vores tilbud</Button>
 				  </div>
 				</div>
 			  </section>
@@ -90,7 +94,6 @@ import "../styles/globalTellerup.css";
 				<Genre></Genre>
 			</section>
 		</main>
-
 	</body>
 </html>
 
@@ -98,19 +101,25 @@ import "../styles/globalTellerup.css";
 
 .hero {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column-reverse;
 	justify-content: center;
 	align-items: center;
 	background-color: var(--bluegrey);
-	padding: 70px;
+	padding: 20px 10px 20px 10px;
+
 }
 .hero article {
-	padding: 5px;
+	padding: 15px;
+}
+@media only screen and (min-width: 520px) {
+	.hero {
+		flex-direction: row;
+		padding: 70px;
+	}
 }
 .hero .heroArticle1 {
 	display: flex;
 	flex-direction: column;
-
 }
 .hero .heroArticle1 h1 {
 	margin-bottom: 30px;
@@ -118,20 +127,14 @@ import "../styles/globalTellerup.css";
 	color: var(--white);
 	font-weight: var(--fontBold);
 }
-.hero .heroArticle1 button {
-	width: 200px;
-	height: 50px;
-	background-color: var(--orange);
-	border-radius: var(--globalBorderRadiusL);
-	color: var(--white);
-}
+
 .hero .heroArticle2 {
 	display: flex;
 	justify-content: center;
 	align-content: center;
 }
 .hero .heroArticle2 img {
-	max-width: 50%;
+	max-width: 200px;
 }
 /* Section 2 */
 .fragtContainer{
@@ -216,10 +219,10 @@ margin: 0 3% 3%;
 .singleSection .single article .singleBottom {
   margin-top: 32px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   gap: 16px;
-  place-self: end;
+  place-self: center;
 }
 
 .singleSection .single article .singleBottom h2 {
@@ -281,6 +284,12 @@ margin: 0 3% 3%;
   top: -40px;
   max-width: 240px;
 }
+.singleSection .single article .singleBottom {
+  margin-top: 32px;
+  flex-direction: row;
+  align-items: center;
+  place-self: end;
+}
 }
 /*********************** Section 5 ******************/
 .dubleviewContainer {
@@ -319,14 +328,7 @@ margin: 0 3% 3%;
 	font-weight: var(--fontBold);
 	text-align: center;
 }
-.dubleviewContainer .boxContent button {
-	width: 200px;
-	height: 50px;
-	background-color: var(--orange);
-	border-radius: var(--globalBorderRadiusL);
-	color: var(--white);
-	cursor: pointer;
-}	
+
 @media only screen and (min-width: 1100px){
 	.dubleviewContainer .box {
 		flex-direction: row;

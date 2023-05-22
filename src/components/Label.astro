@@ -1,0 +1,20 @@
+---
+const {variant = "primary",} = Astro.props;
+---
+<label data-variant={variant}>
+    <img src="components/single.webp" alt="book">
+</label>
+
+
+<style>
+label {
+    width: 100%;
+    position: absolute;
+}
+[data-variant="true"] {
+    display: block;
+}
+[data-variant="false"] {
+    display: none;
+}
+</style>
