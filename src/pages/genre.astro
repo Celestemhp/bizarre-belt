@@ -1,47 +1,29 @@
 ---
-import Header from "../components/Header.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 import MainHeader from "../components/MainHeader.astro";
-import Button from "../components/Button.astro";
 
 import "../styles/global.css";
 import "../styles/tokens.css";
 
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Landingpage</title>
-	</head>
-	<body>
-		<header> 
-			<Header></Header>
-		</header>
-		<main>
-      <MainHeader title="Genrer"></MainHeader>
-            <section class="genre-section">
-                <div class="genre-grid">
-                  <div class="genre-box" style="background-color: var(--darkvanilla);"><a href="kategori.astro"><h2>BØRNEBØGER</h2></a></div>
-                  <div class="genre-box" style="background-color: var(--vanilla);"><a href="kategori.astro"><h2>KRIMI</h2></a></div>
-                  <div class="genre-box" style="background-color: var(--royalblue);"><a href="kategori.astro"><h2 class="white">ROMANTIK</h2></a></div>
-                  <div class="genre-box" style="background-color: var(--lighterblue);"><a href="kategori.astro"><h2>SCI-FY</h2></a></div>
-                  <div class="genre-box" style="background-color: var(--royalblue);"><a href="kategori.astro"><h2 class="white">FANTASY</h2></a></div>
-                  <div class="genre-box" style="background-color: var(--lighterblue);"><a href="kategori.astro"><h2>UNGDOMSROMANER</h2></a></div>
-                  <div class="genre-box" style="background-color: var(--vanilla);"><a href="kategori.astro"><h2>YA-REALISME</h2></a></div>
-                  <div class="genre-box" style="background-color: var(--darkvanilla);"><a href="kategori.astro"><h2>SKØNLITTERATUR</h2></a></div>
-                  <div class="genre-box" style="background-color: var(--lighterblue);"><a href="kategori.astro"><h2>BIOGRAFIER</h2></a></div>
-                  <div class="genre-box" style="background-color: var(--royalblue);"><a href="kategori.astro"><h2 class="white">HOBBY</h2></a></div>
-                  <div class="genre-box" style="background-color: var(--darkvanilla);"><a href="kategori.astro"><h2>ROMANTIK</h2></a></div>
-                  <div class="genre-box" style="background-color: var(--royalblue);"><a href="kategori.astro"><h2 class="white">SCI-FY</h2></a></div>
-                </div>
-              </section>
-
-        </main>
-    </body>
-</html>
+<MainLayout title="Genrer" />
+<MainHeader title="Genrer"></MainHeader>
+  <section class="genre-section">
+      <div class="genre-grid">
+        <div class="genre-box" style="background-color: var(--darkvanilla);"><a href="kategori.astro"><h2>BØRNEBØGER</h2></a></div>
+        <div class="genre-box" style="background-color: var(--vanilla);"><a href="kategori.astro"><h2>KRIMI</h2></a></div>
+        <div class="genre-box" style="background-color: var(--royalblue);"><a href="kategori.astro"><h2 class="white">ROMANTIK</h2></a></div>
+        <div class="genre-box" style="background-color: var(--lighterblue);"><a href="kategori.astro"><h2>SCI-FY</h2></a></div>
+        <div class="genre-box" style="background-color: var(--royalblue);"><a href="kategori.astro"><h2 class="white">FANTASY</h2></a></div>
+        <div class="genre-box" style="background-color: var(--lighterblue);"><a href="kategori.astro"><h2>UNGDOMSROMANER</h2></a></div>
+        <div class="genre-box" style="background-color: var(--vanilla);"><a href="kategori.astro"><h2>YA-REALISME</h2></a></div>
+        <div class="genre-box" style="background-color: var(--darkvanilla);"><a href="kategori.astro"><h2>SKØNLITTERATUR</h2></a></div>
+        <div class="genre-box" style="background-color: var(--lighterblue);"><a href="kategori.astro"><h2>BIOGRAFIER</h2></a></div>
+        <div class="genre-box" style="background-color: var(--royalblue);"><a href="kategori.astro"><h2 class="white">HOBBY</h2></a></div>
+        <div class="genre-box" style="background-color: var(--darkvanilla);"><a href="kategori.astro"><h2>ROMANTIK</h2></a></div>
+        <div class="genre-box" style="background-color: var(--royalblue);"><a href="kategori.astro"><h2 class="white">SCI-FY</h2></a></div>
+      </div>
+    </section>
 
 <style>
     * {
@@ -95,3 +77,4 @@ import "../styles/tokens.css";
       color: white;
     }
   </style>
+  

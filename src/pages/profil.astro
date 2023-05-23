@@ -1,39 +1,24 @@
 ---
-import Header from "../components/Header.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 import MainHeader from "../components/MainHeader.astro";
-import Button from "../components/Button.astro";
 
 import "../styles/global.css";
 import "../styles/tokens.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Profil</title>
-	</head>
-	<body>
-		<header> 
-			<Header></Header>
-		</header>
-		<main>
-            <MainHeader title="Profil"></MainHeader>
-            <section class="genre-section">
-                <h2>Hej Stefan</h2>
-                <p>Hvad kan vi gøre for dig i dag?</p>
-                <div class="genre-grid">
-                  <div class="genre-box" style="background-color: var(--lighterblue);"><a href="kategori.astro"><h2>Mine ordrer</h2></a></div>
-                  <div class="genre-box" style="background-color: var(--darkvanilla);"><a href="kategori.astro"><h2>Mine bøger</h2></a></div>
-                  <div class="genre-box" style="background-color: var(--royalblue);"><a href="kategori.astro"><h2 id="white">Mine oplysninger</h2></a></div>
-                </div>
-              </section>
-              <div class="stroke"></div>           
-        </main>
-    </body>
-</html>
+<MainLayout title="Profile" />
+<MainHeader title="Profil"></MainHeader>
+  <section class="genre-section">
+      <h2>Hej Stefan</h2>
+      <p>Hvad kan vi gøre for dig i dag?</p>
+      <div class="genre-grid">
+        <div class="genre-box" style="background-color: var(--lighterblue);"><a href="kategori.astro"><h2>Mine ordrer</h2></a></div>
+        <div class="genre-box" style="background-color: var(--darkvanilla);"><a href="kategori.astro"><h2>Mine bøger</h2></a></div>
+        <div class="genre-box" style="background-color: var(--royalblue);"><a href="kategori.astro"><h2 id="white">Mine oplysninger</h2></a></div>
+      </div>
+  </section>
+  <div class="stroke"></div>           
+
 <style>
      .genre-section {
         margin-top: 20px;

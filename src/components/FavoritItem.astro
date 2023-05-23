@@ -6,6 +6,7 @@ const {img, title, author, format, delivery, price} = Astro.props;
 <article>
     <div class="imgContainer">
         <img src={img} alt="book">
+        <span class="label">2 del i serien</span>
     </div>
     <div class="text">
         <h3 class="h3">{title}</h3>
@@ -31,6 +32,17 @@ const {img, title, author, format, delivery, price} = Astro.props;
         padding-block: 50px;
         padding-inline: 0px;
     }
+    .imgContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    .label {
+        color: white;
+        padding: 8px;
+        font-family: Arial;
+        background-color: var(--royalblue);
+}
     article img {
         max-width: 150px;
         height: auto;
@@ -58,14 +70,16 @@ const {img, title, author, format, delivery, price} = Astro.props;
         align-items: center;
     }
 
-    @media (min-width: 500px) {
+    @media (min-width: 600px) {
         article {
             flex-direction: row;
             justify-content: space-between;
             padding: 50px;
         }
         .imgContainer {
-            max-width: 150px;
+            max-width: 300px;
+            flex-direction: row;
+            align-items: flex-start;
         }
         .text {
             text-align: start;

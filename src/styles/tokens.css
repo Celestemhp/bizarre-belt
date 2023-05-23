@@ -1,5 +1,5 @@
 /* Typography desktop */
-h1 {
+/* h1 {
   font-size: var(--fontSizeDesktopL);
   font-weight: var(--fontNormal);
   line-height: var(--lineHeightsAuto);
@@ -25,7 +25,10 @@ p {
   font-size: var(--fontSizeDesktopMd);
   font-weight: var(--fontNormal);
   line-height: var(--lineHeightsAuto);
-}
+} */
+
+
+
 
 /* .s {
   font-size: 14px;
