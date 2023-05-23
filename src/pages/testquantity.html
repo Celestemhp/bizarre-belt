@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="quantity">
+        <button class="minus">-</button>
+        <input type="text" class="count" value="1">
+        <button class="plus">+</button>
+        </div>
+</body>
+</html>
+<script>
+    // Hent alle antalknapper på siden
+    var quantityButtons = document.querySelectorAll('.quantity');
+    
+    // Gå igennem hver antalknap og tilføj klikhændelser til minus- og plusknapperne
+    quantityButtons.forEach(function(button) {
+      var minusButton = button.querySelector('.minus');
+      var plusButton = button.querySelector('.plus');
+      var countInput = button.querySelector('.count');
+    
+      // Klikhændelse for minusknappen
+      minusButton.addEventListener('click', function() {
+        var countInput = button.querySelector('.count');
+        var currentValue = parseInt(countInput.value);
+        if (currentValue > 1) {
+          countInput.value = (currentValue - 1).toString();
+        }
+      });
+    
+      // Klikhændelse for plusknappen
+      plusButton.addEventListener('click', function() {
+        var countInput = button.querySelector('.count');
+        var currentValue = parseInt(countInput.value);
+        countInput.value = (currentValue + 1).toString();
+      });
+    });
+    
+    
+    </script>
