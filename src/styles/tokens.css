@@ -1,9 +1,10 @@
-font-weight: var(--fontBold);
 
 
 
 h1 {
   font-size: var(--font-size-lg);
+  font-weight: var(--fontBold);
+  line-height: 2rem;
 }
 h2 {
   font-size: var(--font-size-md);

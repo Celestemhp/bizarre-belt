@@ -1,0 +1,115 @@
+---
+import "../styles/tokens.css";
+import "../styles/base.css";
+const { titel, imgPath, imgPath1, imgPath2, imgPath3, imgPath4, imgPath5, imgPath6, imgPath7, imgPath8, forfatter, part, price, anmeldser, newBadge } = Astro.props;
+
+import Button from "./Button.astro";
+---
+
+<article class="mt-20 w-[312px] h-[500px] shaddowcard mx-auto">
+  <div class="grid imgcard relative">
+    {newBadge && <p class="badge absolute right-0 bottom-0 ">NYHED</p>}
+
+    <img class="imgradius mx-auto my-6" src={imgPath} alt="" height="250" width="170" />
+    <div class="format absolute rounded-r-lg mx-auto bottom-20">
+      <img class="w-9 p-1 mt-1" src={imgPath1} alt="" height="" width="" />
+      <img class="w-9 p-1" src={imgPath2} alt="" height="" width="" />
+      <img class="w-9 p-1 mb-1" src={imgPath3} alt="" height="" width="" />
+    </div>
+  </div>
+  <article class="px-3 relative">
+    <h3 class="titel">{titel}</h3>
+    <p class="forfatter mb-2">{forfatter}</p>
+    <p class="part">{part}</p>
+    <p class="price my-3">{price}</p>
+    <div class="flex w-4 absolute right-20">
+      <img src={imgPath4} alt="" />
+      <img src={imgPath5} alt="" />
+      <img src={imgPath6} alt="" />
+      <img src={imgPath7} alt="" />
+      <img src={imgPath8} alt="" />
+    </div>
+  </article>
+</article>
+
+<style>
+  .format {
+    background-color: var(--bluegrey);
+  }
+  .shaddowcard {
+    box-shadow: var(--box-shadow);
+  }
+  .imgcard {
+    border-top-left-radius: var(--globalBorderRadiusSm);
+    border-top-right-radius: var(--globalBorderRadiusSm);
+    background-color: var(--cardBg);
+  }
+  article {
+    border-radius: var(--cardBorderRadius);
+    box-shadow: var(--shadowDefault);
+    background-color: var(--cardBgColor);
+    color: var(--primaryTekstColor);
+    font-family: var(--primary);
+  }
+
+  h3 {
+    padding: var(--sm);
+    font-size: var(--font-size-md);
+    font-weight: var(--fontSemibold);
+    line-height: var(--primaryLineHeight);
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  .forfatter {
+    font-size: var(--font-size-base);
+    font-weight: var(--fontNormal);
+    padding-left: var(--sm);
+    font-weight: var(--primaryFontWeight);
+    line-height: var(--secondaryLineHeight);
+  }
+
+  .part {
+    padding: 3px;
+    display: inline;
+    background-color: var(--bluegrey);
+    color: var(--white);
+    font-size: var(--font-size-sm);
+  }
+
+  .price {
+    font-size: var(--font-size-md);
+    font-weight: var(--fontSemibold);
+    padding-left: var(--sm);
+    color: var(--ctaColorRed);
+    line-height: var(--primaryLineHeight);
+  }
+
+  .shipping {
+    padding: var(--sm);
+    font-size: var(--fontBase);
+    font-weight: var(--primaryFontWeight);
+  }
+
+  .button1 {
+    margin: var(--sm);
+    background-color: var(--ctaSecondaryBgColor);
+    padding-left: var(--primaryXSpacing);
+    padding-right: var(--primaryXSpacing);
+    padding-top: var(--gapSpacing);
+    padding-bottom: var(--gapSpacing);
+    border-radius: var(--ctaPrimaryBorderRadius);
+    color: var(--ctaTertiaryBgColor);
+    font-family: var(--fontRoboto);
+  }
+
+  .badge {
+    color: var(--white);
+    width: 110px;
+    background-color: var(--bluegrey);
+    font-family: var(--fontRoboto);
+    font-weight: var(--fontBold);
+    text-align: center;
+    border-top-left-radius: var(--globalBorderRadiusSm);
+  }
+</style>
