@@ -20,13 +20,18 @@ const { title, hasSearch } = Astro.props;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;500;600&display=swap" rel="stylesheet" />
     <title>{title}</title>
+    <slot />
   </head>
 
   <body>
     <Header hasSearch={hasSearch} />
-    <main class="">
+    <main>
       <slot />
     </main>
     <!-- <Footer /> -->
+
+
+    
   </body>
+  
 </html>
