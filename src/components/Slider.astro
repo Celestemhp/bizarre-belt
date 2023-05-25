@@ -1,18 +1,21 @@
 ---
-
+import ProductCardSection from "../components/ProductCardSection.astro";
 ---
 
 <div class="carousel">
-  <button class="carousel-button carousel-button--left is-hidden">
-    <img src="" alt="">
+  <button class="carousel-button carousel-button--left ">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 1024 1024">
+      <path fill="currentColor" d="M685.248 104.704a64 64 0 0 1 0 90.496L368.448 512l316.8 316.8a64 64 0 0 1-90.496 90.496L232.704 557.248a64 64 0 0 1 0-90.496l362.048-362.048a64 64 0 0 1 90.496 0z"/>
+    </svg>
   </button>
+  
   <div class="carousel-track-container">
     <ul class="carousel-track">
       <li class="carousel-slide current-slide">
-        <img class="carousel-img" src="imgs/single.webp" alt="">
+        <ProductCardSection/>
       </li>
-      <li class="carousel-slide bg-slate-400">
-        <img class="carousel-img" src="imgs/single.webp" alt="">
+      <li class="carousel-slide">
+        <ProductCardSection/>
       </li>
       <li class="carousel-slide">
         <img class="carousel-img" src="imgs/single.webp" alt="">
@@ -21,7 +24,9 @@
   </div>
 
   <button class="carousel-button carousel-button--right">
-    <img src="" alt="">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 1024 1024">
+      <path fill="currentColor" d="M338.752 104.704a64 64 0 0 0 0 90.496l316.8 316.8l-316.8 316.8a64 64 0 0 0 90.496 90.496l362.048-362.048a64 64 0 0 0 0-90.496L429.248 104.704a64 64 0 0 0-90.496 0z"/>
+    </svg>
   </button>
 
   <div class="carousel-nav">
@@ -34,40 +39,44 @@
 <style>
   .carousel {
     position: relative;
-    height: 500px;
-    width: 80%;
+    height: 400px;
+    width: 90%;
     margin: 0 auto;
   }
-  .carousel-img {
+  /* .carousel-img {
     width: 100%;
     height: 100%;
-  }
+  } */
   .carousel-track-container {
-    background: green;
+    /* background: green; */
     height: 100%;
     position: relative;
     overflow: hidden;
   }
   .carousel-track {
-    padding: 0;
+    padding: 10px;
     margin: 0;
     list-style: none;
     position: relative;
     height: 100%;
     transition: transform 250ms ease-in;
+    background-color: blue;
+
   }
   .carousel-slide {
     position: absolute;
     top: 0;
     bottom: 0;
     width: 100%;
+    background-color: yellow;
+
   }
   .carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background: transparent;
-    border: solid 1px black;
+    border: none;
   }
   .carousel-button--left {
     left: -40px;
@@ -81,7 +90,7 @@
     width: 12px;
   }
   .carousel-nav {
-    background: pink;
+    /* background: pink; */
     display: flex;
     justify-content: center;
     padding: 10px 0;
@@ -91,12 +100,22 @@
     border-radius: 50%;
     width: 15px;
     height: 15px;
-    background: black;
+    background: grey;
     margin: 0 12px;
     cursor: pointer;
   }
   .carousel-indicator.current-slide {
     background: yellow;
+  }
+  .carousel-button--right :hover {
+    width: 120%;
+  }
+  .carousel-button--left :hover {
+    width: 120%;
+  }
+  .carousel-indicator button :hover {
+    width: 120%;
+    background: black;
   }
   .is-hidden {
     display: none;
@@ -121,7 +140,8 @@
   slides.forEach(setSlidePosition);
 
   const moveToSlide = (track, currentSlide, targetSlide) => {
-    track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+    const targetSlideIndex = Array.from(targetSlide.parentNode.children).indexOf(targetSlide);
+    track.style.transform = `translateX(-${slideWidth * targetSlideIndex}px)`;
     currentSlide.classList.remove('current-slide');
     targetSlide.classList.add('current-slide');
   };
